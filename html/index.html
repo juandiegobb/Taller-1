@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <aside>
+        <h1 id="nombreAPP">Promedio de notas</h1>
+        <h2>Juan Diego Castillo Jimenez</h2>
+        <h3>55223042</h3>
+    </aside>
+
+    <div>
+        <button id="agregarActividadBtn">Agregar Actividad</button>
+        <table id="actividadesTabla">
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Nota</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <p>Promedio: <span id="promedio">0</span></p>
+        <p>Estado: <span id="estado">No Aprobado</span></p>
+    </div>
+
+    <!-- Modal para agregar nueva actividad -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar nueva actividad</h2>
+            <label for="nombreActividad">Nombre de la Actividad:</label>
+            <input type="text" id="nombreActividad">
+            <label for="notaActividad">Nota:</label>
+            <input type="number" id="notaActividad" step="0.1" min="0" max="5">
+            <button id="guardarActividadBtn">Guardar</button>
+        </div>
+    </div>
+    <!-- Modal para confirmar la eliminación -->
+<div id="confirmarEliminarModal" class="modal">
+    <div class="modal-content">
+        <h2>¿Estás seguro de que deseas eliminar esta actividad?</h2>
+        <button id="confirmarEliminarBtn">Sí</button>
+        <button id="cancelarEliminarBtn">No</button>
+    </div>
+</div>
+
+    
+    <script src="../js/index.js"></script>
+</body>
+</html>
