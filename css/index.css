@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +8,7 @@ body {
 aside {
     width: 20%; 
     height: 100vh;
-    background-color: #4CAF50;
+    background-color: hsl(34, 90%, 44%);
     color: white;
     padding: 20px;
     display: flex;
@@ -18,32 +19,47 @@ aside {
 }
 
 table {
-    width: 60%;
+    width: 80%; /* Aumentar el ancho de la tabla */
     margin: 20px auto;
-    border-collapse: collapse; /* Asegura que los bordes de la tabla se colapsen en uno solo */
+    border-collapse: collapse; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la tabla */
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px; /* Aumentar el padding */
     text-align: left;
-    border: 1px solid #ddd; /* Añade un borde suave a las celdas */
+    border: 1px solid #ddd; 
 }
 
 th {
-    background-color: #f2f2f2; /* Color de fondo para los encabezados de la tabla */
+    background-color: #f2f2f2; 
 }
 
+/* Estilos para botones */
 button {
     padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px; /* Bordes redondeados para los botones */
+    border-radius: 5px; 
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Añadir animaciones */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #a07145;
+    transform: scale(1.05); /* Efecto de aumento en hover */
+}
+
+/* Pseudoclase para el primer botón */
+button:first-of-type {
+    background-color: #2196F3; /* Cambiar color del primer botón */
+}
+
+/* Pseudoelemento para agregar un ícono a los botones */
+button::before {
+    content: "🎓"; /* Agregar un ícono antes del texto del botón */
+    margin-right: 5px; /* Espaciado entre el ícono y el texto */
 }
 
 .modal {

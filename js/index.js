@@ -8,13 +8,13 @@ let guardarActividadBtn = document.getElementById("guardarActividadBtn");
 let confirmarEliminarBtn = document.getElementById("confirmarEliminarBtn");
 let cancelarEliminarBtn = document.getElementById("cancelarEliminarBtn");
 
-let actividadEnEdicion = null; // Nueva variable para controlar si se está editando
-let actividadAEliminar = null; // Nueva variable para almacenar la actividad a eliminar
+let actividadEnEdicion = null; 
+let actividadAEliminar = null; 
 
-// Mostrar el modal para agregar una actividad
+// Mostrar el modal para agregar actividad
 agregarActividadBtn.onclick = function() {
     modal.style.display = "flex";
-    actividadEnEdicion = null;
+    actividadEnEdicion = null; // Reiniciar la actividad en edición
 }
 
 // Cerrar el modal
@@ -22,28 +22,28 @@ closeModal.onclick = function() {
     modal.style.display = "none";
 }
 
-// Mostrar el modal de confirmación antes de eliminar
+// Confirmar la eliminación de actividad
 function confirmarEliminarActividad(index) {
-    actividadAEliminar = index; // Almacena el índice de la actividad a eliminar
-    confirmarEliminarModal.style.display = "flex"; // Muestra el modal de confirmación
+    actividadAEliminar = index; 
+    confirmarEliminarModal.style.display = "flex"; // Mostrar modal de confirmación
 }
 
-// Eliminar la actividad si se confirma
+// Confirmar la eliminación
 confirmarEliminarBtn.onclick = function() {
     if (actividadAEliminar !== null) {
-        eliminarActividad(actividadAEliminar); // Llama a la función de eliminación
-        confirmarEliminarModal.style.display = "none"; // Cierra el modal de confirmación
-        actividadAEliminar = null; // Resetea la actividad seleccionada para eliminar
+        eliminarActividad(actividadAEliminar); 
+        confirmarEliminarModal.style.display = "none"; 
+        actividadAEliminar = null; 
     }
 }
 
-// Cancelar la eliminación de la actividad
+// Cancelar eliminación
 cancelarEliminarBtn.onclick = function() {
-    confirmarEliminarModal.style.display = "none"; // Cierra el modal de confirmación
-    actividadAEliminar = null; // Resetea la actividad seleccionada
+    confirmarEliminarModal.style.display = "none"; 
+    actividadAEliminar = null; 
 }
 
-// Función para guardar una nueva actividad o modificar una existente
+// Guardar actividad
 guardarActividadBtn.onclick = function() {
     let nombre = document.getElementById("nombreActividad").value;
     let nota = parseFloat(document.getElementById("notaActividad").value);
@@ -58,6 +58,7 @@ guardarActividadBtn.onclick = function() {
         actualizarTabla();
         modal.style.display = "none";
 
+        // Limpiar campos del modal
         document.getElementById("nombreActividad").value = "";
         document.getElementById("notaActividad").value = "";
     } else {
@@ -65,7 +66,7 @@ guardarActividadBtn.onclick = function() {
     }
 }
 
-// Actualizar la tabla de actividades
+// Actualizar la tabla
 function actualizarTabla() {
     let tablaCuerpo = document.querySelector("#actividadesTabla tbody");
     tablaCuerpo.innerHTML = "";
@@ -81,13 +82,15 @@ function actualizarTabla() {
 
         let celdaAcciones = fila.insertCell(2);
         
+        // Botón de eliminar
         let eliminarBtn = document.createElement("button");
         eliminarBtn.textContent = "Eliminar";
         eliminarBtn.onclick = function() {
-            confirmarEliminarActividad(index); // Mostrar la confirmación antes de eliminar
+            confirmarEliminarActividad(index); 
         };
         celdaAcciones.appendChild(eliminarBtn);
 
+        // Botón de modificar
         let modificarBtn = document.createElement("button");
         modificarBtn.textContent = "Modificar";
         modificarBtn.onclick = function() {
@@ -99,13 +102,13 @@ function actualizarTabla() {
     actualizarPromedio();
 }
 
-// Eliminar una actividad
+// Eliminar actividad
 function eliminarActividad(index) {
-    actividades.splice(index, 1); // Elimina la actividad
-    actualizarTabla(); // Refresca la tabla
+    actividades.splice(index, 1); 
+    actualizarTabla(); 
 }
 
-// Modificar una actividad
+// Modificar actividad
 function modificarActividad(index) {
     document.getElementById("nombreActividad").value = actividades[index].nombre;
     document.getElementById("notaActividad").value = actividades[index].nota;
@@ -114,7 +117,7 @@ function modificarActividad(index) {
     actividadEnEdicion = index; // Modo edición
 }
 
-// Actualizar el promedio y el estado de aprobación
+// Actualizar promedio y estado
 function actualizarPromedio() {
     let total = actividades.reduce((sum, actividad) => sum + actividad.nota, 0);
     let promedio = actividades.length ? (total / actividades.length).toFixed(2) : 0;
