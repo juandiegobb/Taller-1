@@ -2,11 +2,11 @@
 let actividades = [];
 let modal = document.getElementById("modal");
 let confirmarEliminarModal = document.getElementById("confirmarEliminarModal");
-let agregarActividadBtn = document.getElementById("agregarActividadBtn");
+let agregarActividadBtn = document.getElementById("actividades");
 let closeModal = document.getElementsByClassName("close")[0];
-let guardarActividadBtn = document.getElementById("guardarActividadBtn");
-let confirmarEliminarBtn = document.getElementById("confirmarEliminarBtn");
-let cancelarEliminarBtn = document.getElementById("cancelarEliminarBtn");
+let guardarBtn = document.getElementById("guardar");
+let confirmarEliminarBtn = document.getElementById("modalsi");
+let cancelarEliminarBtn = document.getElementById("modalno");
 
 let actividadEnEdicion = null; 
 let actividadAEliminar = null; 
@@ -44,7 +44,7 @@ cancelarEliminarBtn.onclick = function() {
 }
 
 // Guardar actividad
-guardarActividadBtn.onclick = function() {
+guardarBtn.onclick = function() {
     let nombre = document.getElementById("nombreActividad").value;
     let nota = parseFloat(document.getElementById("notaActividad").value);
 

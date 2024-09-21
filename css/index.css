@@ -18,8 +18,9 @@ aside {
     flex-direction: column;
 }
 
+
 table {
-    width: 80%; /* Aumentar el ancho de la tabla */
+    width: 100vh; /* Aumentar el ancho de la tabla */
     margin: 20px auto;
     border-collapse: collapse; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la tabla */
@@ -38,12 +39,21 @@ th {
 /* Estilos para botones */
 button {
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background-color: #cc0d0d;
     color: white;
     border: none;
     border-radius: 5px; 
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s; /* Añadir animaciones */
+}
+#actividades{
+    padding: 50px 75px;
+    background-color: #342ac2;
+    color: white;
+    border: none;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {

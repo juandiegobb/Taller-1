@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promedio</title>
+    <title>Promedio de Notas</title>
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     </aside>
 
     <div>
-        <button id="agregarActividadBtn">Agregar Actividad</button>
+        <button id="actividades">Agregar Actividad</button>
         <table id="actividadesTabla">
             <thead>
                 <tr>
@@ -36,19 +36,19 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Agregar nueva actividad</h2>
-            <label for="nombreActividad">Nombre de la Actividad:</label>
+            <label id="actividad" for="nombreActividad">Nombre de la Actividad:</label>
             <input type="text" id="nombreActividad">
-            <label for="notaActividad">Nota:</label>
+            <label id="nota" for="notaActividad">Nota:</label>
             <input type="number" id="notaActividad" step="0.1" min="0" max="5">
-            <button id="guardarActividadBtn">Guardar</button>
+            <button id="guardar">Guardar</button>
         </div>
     </div>
     <!-- Modal para confirmar la eliminación -->
 <div id="confirmarEliminarModal" class="modal">
     <div class="modal-content">
         <h2>¿Estás seguro de que deseas eliminar esta actividad?</h2>
-        <button id="confirmarEliminarBtn">Sí</button>
-        <button id="cancelarEliminarBtn">No</button>
+        <button id="modalsi">Sí</button>
+        <button id="modalno">No</button>
     </div>
 </div>
 
